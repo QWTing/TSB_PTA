@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+}
+
+header {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header h1 a {
+  color: black;
+  text-decoration: none;
+}
+header h3 {
+  margin: 0 30px;
+}
+header ul {
+  display: flex;
+}
+header ul li {
+  list-style-type: none;
+  margin: 0 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+header ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  display: inline-block;
+  padding-bottom: 0.15rem;
+  position: relative;
+}
+header ul li a::before {
+  content: "";
+  position: absolute;
+  left: -70px;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: 0.5s ease;
+}
+header ul li a:hover {
+  font-weight: bold;
+}
+header ul li a:hover::before {
+  left: 0;
+}
+header ul li a:active::before {
+  left: 60px;
+}
+
+.wrapper .login-box {
+  transform: translateX(50%);
+  transition: 1s ease;
+  opacity: 1;
+  filter: blur(0px);
+}
+.wrapper .register-box {
+  transform: translateX(100%);
+  transition: 1s ease;
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.wrapper.active .login-box {
+  transform: translateX(-100%);
+  transition: 1s ease;
+  opacity: 0;
+  filter: blur(10px);
+}
+.wrapper.active .register-box {
+  transform: translateX(-50%);
+  transition: 1s ease;
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.form-box {
+  position: relative;
+  box-sizing: border-box;
+  width: 400px;
+  height: 500px;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgb(78, 83, 81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-box h2 {
+  font-size: 2em;
+}
+.form-box .input-box {
+  position: relative;
+  width: 310px;
+  margin: 30px 0;
+  border-bottom: 2px solid black;
+}
+.form-box .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  font-size: 1em;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.5s;
+}
+.form-box .input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 1em;
+  color: black;
+  padding: 0 35px 0 5px;
+}
+.form-box .input-box input:focus ~ label, .form-box .input-box input:valid ~ label {
+  top: -5px;
+  color: black;
+}
+.form-box .input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  line-height: 57px;
+}
+.form-box .remember-forget {
+  margin: -15px 0 15px;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+}
+.form-box .remember-forget label input {
+  margin-right: 3px;
+}
+.form-box .remember-forget a {
+  text-decoration: none;
+  color: darkgray;
+}
+.form-box .remember-forget a:hover {
+  text-decoration: underline;
+}
+.form-box .remember-forget a:active {
+  text-decoration: none;
+}
+.form-box button {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
+  z-index: 1;
+  overflow: hidden;
+}
+.form-box button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(#989999, #b1e1e6, #989999, #b1e1e6);
+  left: 0;
+  top: -100%;
+  z-index: -1;
+  transition: 0.5s;
+}
+.form-box button:hover::before {
+  top: -50%;
+}
+.form-box button:active::before {
+  top: 0;
+}
+.form-box .register-link {
+  font-size: 0.9em;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+.form-box .register-link p a {
+  color: darkgray;
+  text-decoration: none;
+}
+.form-box .register-link p a:hover {
+  text-decoration: underline;
+}
+.form-box .register-link p a:active {
+  text-decoration: none;
+}
+
+.table_w {
+  margin: 0 auto;
+}
+
+.data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 100px;
+  width: 100%;
+  height: 50vh;
+}
+.data .input-box {
+  width: 300px;
+  position: relative;
+  padding: 20px 0;
+}
+.data .input-box input, .data .input-box select {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+.data .input-box label {
+  position: absolute;
+  font-size: 1.2em;
+  top: -10px;
+  left: 0px;
+}
+.data button {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
+  z-index: 1;
+  overflow: hidden;
+}
+.data button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(#989999, #b1e1e6, #989999, #b1e1e6);
+  left: 0;
+  top: -100%;
+  z-index: -1;
+  transition: 0.5s;
+}
+.data button:hover::before {
+  top: -50%;
+}
+.data button:active::before {
+  top: 0;
+}
+
+.search form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.search form .input-box {
+  margin-left: 20px;
+}
+.search form button {
+  margin-left: 20px;
+  position: relative;
+  width: 60px;
+  height: 25px;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8em;
+  color: black;
+  font-weight: 500;
+  z-index: 1;
+  overflow: hidden;
+}
+.search form button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(#989999, #b1e1e6, #989999, #b1e1e6);
+  left: 0;
+  top: -100%;
+  z-index: -1;
+  transition: 0.5s;
+}
+.search form button:hover::before {
+  top: -50%;
+}
+.search form button:active::before {
+  top: 0;
+}
+
+.search_table {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search_table table {
+  width: 800px;
+  margin: 20px;
+}
+.search_table table .w100 {
+  width: 100px;
+}
+
+.report_show {
+  margin-top: 20px;
+  width: 100%;
+}
+.report_show button {
+  margin-left: 20px;
+  position: relative;
+  width: 60px;
+  height: 25px;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8em;
+  color: black;
+  font-weight: 500;
+  z-index: 1;
+  overflow: hidden;
+}
+.report_show button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(#989999, #b1e1e6, #989999, #b1e1e6);
+  left: 0;
+  top: -100%;
+  z-index: -1;
+  transition: 0.5s;
+}
+.report_show button:hover::before {
+  top: -50%;
+}
+.report_show button:active::before {
+  top: 0;
+}
+
+.back_btn {
+  margin: 30px 0;
+}
+.back_btn a {
+  font-size: 0.8em;
+}
+.back_btn button {
+  color: black;
+  text-decoration: none;
+  width: 100px;
+  margin-left: 20px;
+  position: relative;
+  width: 60px;
+  height: 25px;
+  font-size: 1em;
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  z-index: 1;
+  overflow: hidden;
+}
+.back_btn button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(#989999, #b1e1e6, #989999, #b1e1e6);
+  left: 0;
+  top: -100%;
+  z-index: -1;
+  transition: 0.5s;
+}
+.back_btn button:hover::before {
+  top: -50%;
+}
+.back_btn button:active::before {
+  top: 0;
+}/*# sourceMappingURL=style.css.map */
